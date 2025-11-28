@@ -427,7 +427,8 @@ const Header = () => {
       tags: (dashboardInfo.tags || []).filter(
         item => item.type === TagTypeEnum.Custom || !item.type,
       ),
-      theme_id: dashboardInfo.theme ? dashboardInfo.theme.id : null,
+      // Removing theme_id field as a workaround for issue: https://github.com/apache/superset/issues/35177
+      // theme_id: dashboardInfo.theme ? dashboardInfo.theme.id : null,
       metadata: {
         ...dashboardInfo?.metadata,
         color_namespace: currentColorNamespace,
