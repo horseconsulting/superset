@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-import React, { useEffect, createRef } from 'react';
+import { useEffect, createRef } from 'react';
 import { styled } from '@apache-superset/core/ui';
 import { PluginChartHelloWorldProps, PluginChartHelloWorldStylesProps } from './types';
 
