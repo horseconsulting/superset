@@ -83,6 +83,11 @@ import { FilterPlugins } from 'src/constants';
 import AgGridTableChartPlugin from '@superset-ui/plugin-chart-ag-grid-table';
 import TimeTableChartPlugin from '../TimeTable';
 
+// Custom visualization plugins
+import PluginChartHelloWorld from 'plugins/plugin-chart-hello-world/src/plugin'
+
+
+
 export default class MainPreset extends Preset {
   constructor() {
     const experimentalPlugins = isFeatureEnabled(
@@ -191,6 +196,10 @@ export default class MainPreset extends Preset {
             },
           ],
         }).configure({ key: VizType.Cartodiagram }),
+
+        // Custom visualization plugins
+        new PluginChartHelloWorld().configure({ key: 'ext-hello-world' }),
+        // ----------------------------
         ...experimentalPlugins,
         ...agGridTablePlugin,
       ],
